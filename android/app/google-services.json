@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "316145906142",
+    "project_id": "hakeema-50a90",
+    "storage_bucket": "hakeema-50a90.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:316145906142:android:7a0b3d0535aac17396ed4f",
+        "android_client_info": {
+          "package_name": "com.michtechno.birdcloud.hakeema"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "316145906142-1964berv833s1rbi13uotia73uqi9a5f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAorcSlIsZb6FtuRHbaupwr-u5wJPTzlBU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "316145906142-1964berv833s1rbi13uotia73uqi9a5f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

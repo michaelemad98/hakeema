@@ -12,7 +12,9 @@ import '../../widgits/Textview/textview.dart';
 import 'TypeCareScreen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class NeedCareScreen extends StatelessWidget {
-   NeedCareScreen({Key? key}) : super(key: key);
+  String? contractType;
+  String? seviceTime;
+   NeedCareScreen({Key? key,this.contractType,this.seviceTime}) : super(key: key);
   final NeedCareController controller = Get.put(NeedCareController());
 
   @override
@@ -113,7 +115,9 @@ class NeedCareScreen extends StatelessWidget {
                       BtnRqurment(
                         txt: AppLocalizations.of(context)!.next,
                         onPressed: () {
-                          Get.to(()=>TypeCareScreen());
+                          // Get.to(()=>TypeCareScreen());
+                          print(careneeded[controller.selcectValue]);
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>TypeCareScreen(contractType: contractType,seviceTime: seviceTime,needCareScreen:careneeded[controller.selcectValue],)));
                         },
                       ),
                     ],

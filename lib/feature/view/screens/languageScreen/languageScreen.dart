@@ -6,6 +6,7 @@ import 'package:hakeema/feature/view/widgits/Images/backgroundwhite.dart';
 import 'package:hakeema/main.dart';
 
 import '../../widgits/Buttons/dufueltBtn.dart';
+import '../HomeMainScreen/HomeMainScreen.dart';
 import '../HomeMainScreen/appontmentScreen.dart';
 class LanguageScreen extends StatelessWidget {
 
@@ -25,12 +26,12 @@ class LanguageScreen extends StatelessWidget {
               DefultBtn(onPressed: (){
                 Language? language;
                 MyApp.setLocale(context, Locale('ar'));
-                Get.to(()=>AppointmentScreen());
+                Get.to(()=>HomeMainScreen());
                 box.write("language", true);
               },txt: 'العربية',),
               DefultBtn(onPressed: (){
                 MyApp.setLocale(context, Locale('en'));
-                Get.to(()=>AppointmentScreen());
+                Get.to(()=>HomeMainScreen());
                 box.write("language", false);
               },txt: 'English',),
             ],

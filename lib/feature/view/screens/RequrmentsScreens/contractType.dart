@@ -96,7 +96,9 @@ class ContractType extends StatelessWidget {
                     margin: EdgeInsets.only(left: 25,right: 35),
                     child: BtnRqurment(txt: '${AppLocalizations.of(context)!.next}',
                       onPressed: (){
-                        Get.to(()=>ServiceTimeScreen());
+                        // Get.to(()=>ServiceTimeScreen());
+                        // print(contractTypeList[controller.selcectValue]);
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>ServiceTimeScreen(contractType: contractTypeList[controller.selcectValue],)));
                       },
                     ),
                   ),

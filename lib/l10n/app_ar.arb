@@ -46,5 +46,13 @@
   "please_submit_the_Following_details": "يرجى تقديم التفاصيل التالية",
   "name": "الاسم",
   "email": "البريد الاكتروني",
-  "phone": "رقم الهاتف"
+  "phone": "رقم الهاتف",
+  "profile": "صفحتي",
+  "home": "الصفحه الرئيسة",
+  "settings": "إعدادات",
+  "building_num": "رقم المبنى",
+  "unit_no": "  رقم الوحدة",
+  "zone_no": "رقم المنطقة",
+  "street": "شارع",
+  "send": "ارسال"
 }

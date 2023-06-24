@@ -46,5 +46,13 @@
   "please_submit_the_Following_details": "Please submit the following details",
   "name": "Name",
   "email": "Email",
-  "phone": "Phone No"
+  "phone": "Phone No",
+  "profile": "Profile",
+  "home": "Home",
+  "settings": "Settings",
+  "building_num": "building No",
+  "unit_no": "Unit No",
+  "zone_no": "Zone No",
+  "street": "Street",
+  "send": "Send"
 }

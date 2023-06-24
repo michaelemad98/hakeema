@@ -1,5 +1,6 @@
 
 
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 
@@ -44,4 +45,8 @@ class TypeCareController extends GetxController{
     print(selcectValue);
     update();
   }
+}
+class SpicallCallInstructionController extends GetxController{
+
+  TextEditingController specialinstructionsTec = TextEditingController();
 }

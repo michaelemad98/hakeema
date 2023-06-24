@@ -9,7 +9,9 @@ import 'needCareScreen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ServiceTimeScreen extends StatelessWidget {
-   ServiceTimeScreen({Key? key}) : super(key: key);
+
+    String? contractType;
+   ServiceTimeScreen({Key? key,this.contractType}) : super(key: key);
   final ServiceTimeController controller = Get.put(ServiceTimeController());
   @override
   Widget build(BuildContext context) {
@@ -93,7 +95,9 @@ class ServiceTimeScreen extends StatelessWidget {
                   BtnRqurment(
                     txt: AppLocalizations.of(context)!.next,
                     onPressed: () {
-                      Get.to(()=>NeedCareScreen());
+                      // Get.to(()=>NeedCareScreen());
+                      print(controller.ServiceTimelist[controller.selcectValue]);
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>NeedCareScreen( contractType: contractType,seviceTime: controller.ServiceTimelist[controller.selcectValue],)));
                     },
                   ),
                 ],

@@ -13,7 +13,12 @@ import '../../widgits/StackScreenWid/stackScreenW.dart';
 import '../../widgits/Textview/textview.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class DateAndTimeScreen extends StatelessWidget {
-  const DateAndTimeScreen({Key? key}) : super(key: key);
+  String? contractType;
+  String? seviceTime;
+  String ?needCareScreen;
+  String? typeCare;
+  String ?spicallnstructions;
+  DateAndTimeScreen({Key? key,this.contractType,this.seviceTime,this.needCareScreen,this.typeCare,this.spicallnstructions}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -92,7 +97,8 @@ class DateAndTimeScreen extends StatelessWidget {
                   BtnRqurment(
                     txt: AppLocalizations.of(context)!.next,
                     onPressed: () {
-                      Get.to(()=>RegisterSubmitScreen());
+                      // Get.to(()=>RegisterSubmitScreen());
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>RegisterSubmitScreen(spicallnstructions: spicallnstructions,needCareScreen: needCareScreen,seviceTime: seviceTime,typeCare: typeCare,contractType: contractType,)));
                     },
                   ),
                 ],
