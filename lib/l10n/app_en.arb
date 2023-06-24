@@ -54,5 +54,7 @@
   "unit_no": "Unit No",
   "zone_no": "Zone No",
   "street": "Street",
-  "send": "Send"
+  "send": "Send",
+  "thankuforsend": "thank you for send request",
+  "yourrequestisbeingprocessed": "Your request is being processed"
 }

@@ -110,7 +110,7 @@ class NeedCareScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       IconButton(onPressed: (){
-                        Get.back();
+                        Navigator.pop(context);
                       }, icon: Icon(Icons.arrow_back_ios)),
                       BtnRqurment(
                         txt: AppLocalizations.of(context)!.next,

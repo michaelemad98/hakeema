@@ -54,5 +54,7 @@
   "unit_no": "  رقم الوحدة",
   "zone_no": "رقم المنطقة",
   "street": "شارع",
-  "send": "ارسال"
+  "send": "ارسال",
+  "thankuforsend": "شكرا لك على إرسال الطلب",
+  "yourrequestisbeingprocessed": "يتم معالجة طلبك"
 }

@@ -40,6 +40,7 @@ dependencies:
   cloud_firestore: ^4.8.1
   fluttertoast: ^8.2.2
   custom_navigation_bar: ^0.8.2
+  awesome_dialog: ^3.1.0
 
 dev_dependencies:
   flutter_test:

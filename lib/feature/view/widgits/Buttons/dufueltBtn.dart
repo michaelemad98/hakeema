@@ -48,3 +48,24 @@ class BtnRqurment extends StatelessWidget {
   }
 }
 
+class BtnSend extends StatelessWidget {
+  Widget? widget;
+  GestureTapCallback onPressed;
+  BtnSend({Key? key,this.widget,required this.onPressed}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    ButtonStyle style =
+    ElevatedButton.styleFrom(
+        backgroundColor: Colors.cyan.shade900,
+        foregroundColor: Colors.white,
+        minimumSize: Size(140, 50),
+        elevation: 3,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15)
+        ),
+        textStyle: const TextStyle(fontSize: 25));
+    return ElevatedButton(onPressed: onPressed, child: widget,style: style,);
+  }
+}
+
+

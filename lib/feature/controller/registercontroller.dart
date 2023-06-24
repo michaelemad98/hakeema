@@ -5,6 +5,9 @@ import 'package:hakeema/feature/constant/Toastmessage/compontents.dart';
 import 'package:hakeema/feature/model/usermodel.dart';
 
 class RegisgterController extends GetxController{
+
+    bool  isSendtoFirebase = true;
+    bool finishSendFirebase =false;
   TextEditingController nametec= TextEditingController();
   TextEditingController emailtec= TextEditingController();
   TextEditingController phonetec= TextEditingController();
@@ -35,17 +38,26 @@ class RegisgterController extends GetxController{
     await docUser.set(json);
     await docUseraddress.set(jsonaddress);
     await docUserRequrment.set(jsonrequrment);
+    isSendtoFirebase =true;
+    finishSendFirebase= true;
+
+    update();
   }
   void send(
-      {String ?contractType,
+      {
+      String ?contractType,
       String ?seviceTime,
       String ?needCareScreen,
       String ?typeCare,
-      String ?spicallnstructions})async{
+      String ?spicallnstructions
+      })async{
     if(nametec.text.isEmpty||emailtec.text.isEmpty||phonetec.text.isEmpty){
       showToast(text: 'Please Enter data requirements ', state: ToastState.WARNING);
+      isSendtoFirebase =true;
     }
     else{
+      isSendtoFirebase =false;
+      update();
       final user = UserModel(name: nametec.text.trim(), email: emailtec.text.trim(), phone: phonetec.text.trim());
       creatUser(name:user.name,email:user.email,phone:user.phone,contractType: contractType!,needCareScreen: needCareScreen!,seviceTime: seviceTime!,spicallnstructions: spicallnstructions!, typeCare: typeCare!);
     }
