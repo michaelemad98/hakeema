@@ -31,3 +31,37 @@ class EdtTxtRegister extends StatelessWidget {
     );
   }
 }
+class EdtTxtRegisterWithcode extends StatelessWidget {
+  String? hintText;
+  TextEditingController ?tec;
+  Widget ?prefixIcon;
+  EdtTxtRegisterWithcode({Key? key,this.hintText,this.tec,this.prefixIcon}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(16),
+      padding: EdgeInsets.only(top: 5,bottom:5 ,left: 15,right:  15,),
+      decoration: BoxDecoration(color: Colors.white,
+          borderRadius: BorderRadius.all(Radius.circular(25)),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5),
+              spreadRadius: 5,
+              blurRadius: 7,
+              offset: Offset(0, 3), // changes position of shadow
+            ),
+          ]
+      ),
+
+      child: TextField(
+        controller: tec,
+        decoration: InputDecoration(
+          hintText: hintText,
+          border: InputBorder.none,
+          prefixIcon: prefixIcon
+        ),
+      ),
+    );
+  }
+}

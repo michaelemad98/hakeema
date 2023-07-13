@@ -1,9 +1,11 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:hakeema/feature/view/screens/HomeMainScreen/profileScreen/RegisterScreen.dart';
 import '../../../constant/Toastmessage/compontents.dart';
 import '../../../constant/constats.dart';
 import '../../../controller/contractTypeContrller.dart';
 import '../../../controller/registercontroller.dart';
+import '../../../model/usermodel.dart';
 import '../../widgits/Buttons/dufueltBtn.dart';
 import '../../widgits/EditText/EditTextDefault.dart';
 import '../../widgits/EditText/registeredittxt.dart';
@@ -14,6 +16,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/get.dart';
 import '../HomeMainScreen/HomeMainScreen.dart';
 import '../RequrmentsScreens/dateandtimeScreen.dart';
+import '../registphone/registerCustomermobile.dart';
 
 class RegisterSubmitScreen extends StatelessWidget {
   String? contractType;
@@ -21,6 +24,7 @@ class RegisterSubmitScreen extends StatelessWidget {
   String? needCareScreen;
   String? typeCare;
   String? spicallnstructions;
+  String? dateandtime;
 
   RegisterSubmitScreen(
       {Key? key,
@@ -28,7 +32,8 @@ class RegisterSubmitScreen extends StatelessWidget {
       this.seviceTime,
       this.needCareScreen,
       this.typeCare,
-      this.spicallnstructions})
+      this.spicallnstructions,
+        this.dateandtime})
       : super(key: key);
 
   @override
@@ -66,7 +71,7 @@ class RegisterSubmitScreen extends StatelessWidget {
                     child: GetBuilder<RegisgterController>(
                       init: RegisgterController(),
                       builder: (controller) {
-                        return Column(
+                        return controller.isCompleted?  Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisSize: MainAxisSize.min,
                           children: [
@@ -81,26 +86,19 @@ class RegisterSubmitScreen extends StatelessWidget {
                             SizedBox(
                               height: 10,
                             ),
-                            EdtTxtRegister(
-                              hintText: AppLocalizations.of(context)!.name,
-                              tec: controller.nametec,
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                DefaultText(txt: '${AppLocalizations.of(context)!.name} : \n ${controller.data['Data']['FirstNameArabic']}',fontSize: 20,),
+                                DefaultText(txt: "${AppLocalizations.of(context)!.email} : \n ${controller.data['Data']['Email']}",fontSize: 20,),
+                                DefaultText(txt: "${AppLocalizations.of(context)!.phone} : \n ${controller.data['Data']['Mobile']}",fontSize: 20,),
+                                // DefaultText(txt: '${AppLocalizations.of(context)!.contracttype}: ${contractType} \n${AppLocalizations.of(context)!.choose_Service_Time} ${seviceTime}\n${AppLocalizations.of(context)!.whoNeedsCare} ${needCareScreen}\n ${AppLocalizations.of(context)!.choosetypeofcareService} ${typeCare} > ${spicallnstructions}',fontSize: 20),
+                              ],
                             ),
-                            EdtTxtRegister(
-                              hintText: AppLocalizations.of(context)!.email,
-                              tec: controller.emailtec,
-                            ),
-                            EdtTxtRegister(
-                              hintText: AppLocalizations.of(context)!.phone,
-                              tec: controller.phonetec,
-                            ),
+                            SizedBox(height: 16,),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                IconButton(
-                                    onPressed: () {
-                                      Navigator.pop(context);
-                                    },
-                                    icon: Icon(Icons.arrow_back_ios)),
                                 BtnSend(
                                     onPressed: () {
                                       controller.send(
@@ -109,31 +107,10 @@ class RegisterSubmitScreen extends StatelessWidget {
                                               spicallnstructions,
                                           seviceTime: seviceTime,
                                           needCareScreen: needCareScreen,
-                                          contractType: contractType);
-
-                                      if (controller.finishSendFirebase ==
-                                          true) {
-                                        AwesomeDialog(
-                                          context: context,
-                                          dialogType: DialogType.success,
-                                          animType: AnimType.topSlide,
-                                          title:
-                                              '${AppLocalizations.of(context)!.thankuforsend}',
-                                          desc:
-                                              '${AppLocalizations.of(context)!.yourrequestisbeingprocessed}',
-                                          btnCancelOnPress: () {
-                                            Navigator.pop(context);
-                                          },
-                                          btnOkOnPress: () {
-                                            Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        HomeMainScreen()));
-                                          },
-                                        ).show();
-                                      }
-                                    },
+                                          contractType: contractType,
+                                        dateandtime: dateandtime
+                                      );
+                                      },
                                     widget: controller.isSendtoFirebase
                                         ? Text(
                                             '${AppLocalizations.of(context)!.send}')
@@ -141,7 +118,7 @@ class RegisterSubmitScreen extends StatelessWidget {
                               ],
                             )
                           ],
-                        );
+                        ):RegisterScreen();
                       },
                     )),
               ],

@@ -52,15 +52,17 @@ class DateAndTimeScreen extends StatelessWidget {
                         ),
                       ],
                       color: Colors.white),
-                  child: GetBuilder<TypeCareController>(
-                    init: TypeCareController(),
+                  child: GetBuilder<DateandTimeController>(
+                    init: DateandTimeController(),
                     builder: (controller) {
                       return Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          SizedBox(
-                            height: 45,
+                          Center(
+                            child: SizedBox(
+                              height: 45,
+                            ),
                           ),
                           TextWelcome(
                             txt: AppLocalizations.of(context)!.whenwouldyouliketheservice,
@@ -69,7 +71,16 @@ class DateAndTimeScreen extends StatelessWidget {
                           SizedBox(
                             height: 10,
                           ),
-                          CalendarDatePicker(initialDate: DateTime.now(), firstDate: DateTime.now(), lastDate: DateTime(2050), onDateChanged: (value) => null,),
+                          CalendarDatePicker(initialDate: controller.initialDate, firstDate: DateTime.now(), lastDate: DateTime(2050), onDateChanged: (value){
+                            controller.onChagne(value);
+                          },),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          IconButton(onPressed: ()async{
+                            controller.newTime= await showTimePicker(context: context, initialTime: controller.initialTime ,);
+                            controller.changeTime();
+                          }, icon: Icon(Icons.access_time_filled_sharp,size: 30,)),
                           SizedBox(
                             height: 25,
                           ),
@@ -78,31 +89,37 @@ class DateAndTimeScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Icon(Icons.calendar_month),
-                              TextWelcome(txt: 'June 10 2023',color: Colors.black,fontSize: 12,),
+                              TextWelcome(txt: '${controller.formattedDate}',color: Colors.black,fontSize: 12,),
                               TextWelcome(txt: '|',color: Colors.black,fontSize: 25,),
                               Icon(Icons.access_time_filled_sharp),
-                              TextWelcome(txt: '01:02',color: Colors.black,fontSize: 12,),
+                              TextWelcome(txt: '${controller.initialTime.hour}:${controller.initialTime.minute}',color: Colors.black,fontSize: 12,),
                             ],
                           )
                         ],
                       );
                     },
                   )),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  IconButton(onPressed: (){
-                    Navigator.pop(context);
-                  }, icon: Icon(Icons.arrow_back_ios)),
-                  BtnRqurment(
-                    txt: AppLocalizations.of(context)!.next,
-                    onPressed: () {
-                      // Get.to(()=>RegisterSubmitScreen());
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>RegisterSubmitScreen(spicallnstructions: spicallnstructions,needCareScreen: needCareScreen,seviceTime: seviceTime,typeCare: typeCare,contractType: contractType,)));
-                    },
-                  ),
-                ],
-              )
+              GetBuilder<DateandTimeController>
+                (
+                  init: DateandTimeController(),
+                  builder: (controller){
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    IconButton(onPressed: (){
+                      Navigator.pop(context);
+                    }, icon: Icon(Icons.arrow_back_ios)),
+                    BtnRqurment(
+                      txt: AppLocalizations.of(context)!.next,
+                      onPressed: () {
+                        // Get.to(()=>RegisterSubmitScreen());
+                        // controller.CheckAuth();
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>RegisterSubmitScreen(spicallnstructions: spicallnstructions,needCareScreen: needCareScreen,seviceTime: seviceTime,typeCare: typeCare,contractType: contractType,dateandtime: "${controller.formattedDate} / ${controller.initialTime.hour}:${controller.initialTime.minute}",)));
+                      },
+                    ),
+                  ],
+                );
+              })
             ],
           ),
           Positioned(

@@ -29,7 +29,8 @@ class ProfileContainer extends StatelessWidget {
 }
 class ProfileContaineraddress extends StatelessWidget {
   String ? txt;
-    ProfileContaineraddress({Key? key,this.txt}) : super(key: key);
+
+    ProfileContaineraddress({Key? key,this.txt,}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

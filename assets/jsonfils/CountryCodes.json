@@ -1,0 +1,76 @@
+[
+  {
+    "name": "Qatar",
+    "dial_code": "+974",
+    "code": "QA",
+    "flag": "\uD83C\uDDF6\uD83C\uDDE6"
+  },
+  {
+    "name": "Egypt",
+    "dial_code": "+20",
+    "code": "EG",
+    "flag": "\uD83C\uDDEA\uD83C\uDDEC"
+
+  },
+{
+"name": "Albania",
+"dial_code": "+355",
+"code": "AL",
+  "flag":"\uD83C\uDDE6\uD83C\uDDF1"
+},
+{
+"name": "Algeria",
+"dial_code": "+213",
+"code": "DZ",
+  "flag": "\uD83C\uDDE9\uD83C\uDDFF"
+},
+{
+"name": "Argentina",
+"dial_code": "+54",
+"code": "AR",
+  "flag": "\uD83C\uDDE6\uD83C\uDDF7"
+},
+{
+"name": "Armenia",
+"dial_code": "+374",
+"code": "AM",
+  "flag": "\uD83C\uDDE6\uD83C\uDDF2"
+},
+{
+"name": "Australia",
+"dial_code": "+61",
+"code": "AU",
+  "flag": "\uD83C\uDDE6\uD83C\uDDFA"
+},
+
+{
+"name": "Bahrain",
+"dial_code": "+973",
+"code": "BH",
+  "flag": "\uD83C\uDDE7\uD83C\uDDED"
+},
+{
+"name": "United Arab Emirates",
+"dial_code": "+971",
+"code": "AE",
+  "flag": "\uD83C\uDDE6\uD83C\uDDEA"
+},
+{
+"name": "United Kingdom",
+"dial_code": "+44",
+"code": "GB",
+  "flag": "\uD83C\uDDEC\uD83C\uDDE7"
+},
+{
+"name": "United States",
+"dial_code": "+1",
+"code": "US",
+  "flag": "\uD83C\uDDFA\uD83C\uDDF8"
+},
+{
+"name": "Uruguay",
+"dial_code": "+598",
+"code": "UY",
+  "flag":"\uD83C\uDDFA\uD83C\uDDFE"
+}
+]

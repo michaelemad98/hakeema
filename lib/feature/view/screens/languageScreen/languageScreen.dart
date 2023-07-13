@@ -8,6 +8,7 @@ import 'package:hakeema/main.dart';
 import '../../widgits/Buttons/dufueltBtn.dart';
 import '../HomeMainScreen/HomeMainScreen.dart';
 import '../HomeMainScreen/appontmentScreen.dart';
+import '../registphone/registertScreenPhone.dart';
 class LanguageScreen extends StatelessWidget {
 
   const LanguageScreen({Key? key}) : super(key: key);
@@ -26,12 +27,21 @@ class LanguageScreen extends StatelessWidget {
               DefultBtn(onPressed: (){
                 Language? language;
                 MyApp.setLocale(context, Locale('ar'));
-                Get.to(()=>HomeMainScreen());
+                if(box.read(isLoginkey)==null){
+                  Get.to(()=>RegisterByPhone());
+                }else{
+                  !box.read(isLoginkey)?Get.to(()=>RegisterByPhone()):Get.offAll(()=>HomeMainScreen());
+                }
+
                 box.write("language", true);
               },txt: 'العربية',),
               DefultBtn(onPressed: (){
                 MyApp.setLocale(context, Locale('en'));
-                Get.to(()=>HomeMainScreen());
+                if(box.read(isLoginkey)==null){
+                  Get.to(()=>RegisterByPhone());
+                }else{
+                  !box.read(isLoginkey)?Get.to(()=>RegisterByPhone()):Get.offAll(()=>HomeMainScreen());
+                }
                 box.write("language", false);
               },txt: 'English',),
             ],

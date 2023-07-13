@@ -20,7 +20,7 @@ class HomeMainScreen extends StatelessWidget {
           [
             BottomNavigationBarItem(icon: Icon(Icons.apps_sharp,),label: AppLocalizations.of(context)!.home),
             BottomNavigationBarItem(icon: Icon(Icons.account_circle_sharp,),label: AppLocalizations.of(context)!.profile),
-            BottomNavigationBarItem(icon: Icon(Icons.settings,),label: AppLocalizations.of(context)!.settings),
+            BottomNavigationBarItem(icon: Icon(Icons.my_library_books_rounded,),label: AppLocalizations.of(context)!.myreservation),
           ],
         ),
             tabBuilder: (context,index) {
