@@ -14,7 +14,9 @@ class AppointmentScreen extends StatelessWidget {
         children: [
           RealNurseImg(),
           SizedBox(height: 25,),
-          TextWelcome(txt:  '${AppLocalizations.of(context)!.you_can_make_an_appoinment}',fontSize: 28,color: Colors.cyan.shade900),
+          Container(
+              margin: EdgeInsets.all(16),
+              child: TextWelcome(txt:  '${AppLocalizations.of(context)!.you_can_make_an_appoinment}',fontSize: 28,color: Colors.cyan.shade900)),
           DefultBtn(txt: '${AppLocalizations.of(context)!.appoinment}', onPressed: (){
             // Get.to(()=>ContractType());
             Navigator.push(context, MaterialPageRoute(builder: (context)=>ContractType()));

@@ -30,7 +30,7 @@ class LanguageScreen extends StatelessWidget {
                 if(box.read(isLoginkey)==null){
                   Get.to(()=>RegisterByPhone());
                 }else{
-                  !box.read(isLoginkey)?Get.to(()=>RegisterByPhone()):Get.offAll(()=>HomeMainScreen());
+                  !box.read(isLoginkey)?Get.to(()=>RegisterByPhone()):Get.offAll(()=>HomeMainScreen(currentpage: 0,));
                 }
 
                 box.write("language", true);
@@ -40,7 +40,7 @@ class LanguageScreen extends StatelessWidget {
                 if(box.read(isLoginkey)==null){
                   Get.to(()=>RegisterByPhone());
                 }else{
-                  !box.read(isLoginkey)?Get.to(()=>RegisterByPhone()):Get.offAll(()=>HomeMainScreen());
+                  !box.read(isLoginkey)?Get.to(()=>RegisterByPhone()):Get.offAll(()=>HomeMainScreen(currentpage: 0,));
                 }
                 box.write("language", false);
               },txt: 'English',),

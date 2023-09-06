@@ -7,3 +7,4 @@ final box = GetStorage();
 String Url_api ="https://hakima-api.birdcloud.qa/";
 String customerID='customerID';
 String isLoginkey ='isLoginkey';
+String imageUrl = "https://hakima-api.birdcloud.qa/uploads/images/";

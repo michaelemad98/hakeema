@@ -15,6 +15,6 @@ class SplashController extends GetxController{
   String hakima='HAKEEMA 24';
   GotowelcomScreen()async{
     print('sssssss');
-    Timer(Duration(seconds: 2),()=>  Get.off(()=>WelcomeScreen()));
+    Timer(Duration(seconds: 5),()=>  Get.off(()=>WelcomeScreen()));
   }
 }

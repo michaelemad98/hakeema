@@ -1,5 +1,8 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:hakeema/feature/constant/Toastmessage/compontents.dart';
+import 'package:hakeema/feature/view/screens/registphone/otpScreen.dart';
+import 'package:hakeema/feature/view/widgits/Images/backgroundgreen.dart';
 
 import '../../../constant/constats.dart';
 import '../../../controller/registerphone/registerphonecontroller.dart';
@@ -19,9 +22,7 @@ class RegisterByPhone extends StatelessWidget {
       textDirection: box.read('language')?TextDirection.rtl:TextDirection.ltr,
       child: Stack(
         children: [
-          Container(
-            child: Image.asset('assets/images/backgroundgreen.png',width: double.infinity,height: double.infinity,),
-          ),
+          BackGroundGreen(),
           GetBuilder<RegisterPhoneController>(
               init: RegisterPhoneController(),
               builder: (controller){
@@ -31,7 +32,13 @@ class RegisterByPhone extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TextWelcome(txt: AppLocalizations.of(context)!.bettertogether,fontSize: 32,color: Colors.white),
-                  Image.asset('assets/images/animregist.gif',width: 200,),
+                    FadeInImage(width: 200,
+                        image: NetworkImage(
+                            '${imageUrl}animregist.gif'),
+                        placeholder: AssetImage(
+                            "assets/images/logo.png")),
+
+
                   Container(
                     padding: EdgeInsets.all(16),
                     child: Column(
@@ -58,7 +65,15 @@ class RegisterByPhone extends StatelessWidget {
                     ),
                   ),
                   BtnRqurment(onPressed: (){
-                    controller.CreateUserWithPhoneNumber();
+                    if(controller.phonetec.text==""){
+                      showToast(text: "Please Enter Phone number", state: ToastState.WARNING);
+                    }else{
+                      // controller.CreateUserWithPhoneNumber(context);
+                      controller.CreateMessage();
+
+                    }
+
+                   /*
                     AwesomeDialog(
                       context: context,
                       dialogType: DialogType.question,
@@ -72,6 +87,7 @@ class RegisterByPhone extends StatelessWidget {
                         controller.verifyOTPphone();
                       },
                     ).show();
+                    */
                   },txt: "${AppLocalizations.of(context)!.continueto}",)
                 ],
               ),

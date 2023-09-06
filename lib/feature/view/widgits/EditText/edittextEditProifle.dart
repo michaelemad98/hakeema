@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import '../Textview/textview.dart';
 
 class ProfileEditText extends StatelessWidget {
-  String ? hintText;
+  String ? hintText,labletxt;
   TextEditingController ?tec;
-  ProfileEditText({Key? key,this.hintText,this.tec}) : super(key: key);
+  ProfileEditText({Key? key,this.hintText,this.tec,this.labletxt}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +27,7 @@ class ProfileEditText extends StatelessWidget {
       child:TextField(
         controller: tec,
         decoration: InputDecoration(
+          label: Text("${labletxt}"),
           hintText: hintText,
           border: InputBorder.none,
         ),
@@ -35,9 +36,9 @@ class ProfileEditText extends StatelessWidget {
   }
 }
 class ProfileEditTextaddress extends StatelessWidget {
-  String ? hintText;
+  String ? hintText,lable;
   TextEditingController ?tec;
-  ProfileEditTextaddress({Key? key,this.hintText,this.tec}) : super(key: key);
+  ProfileEditTextaddress({Key? key,this.hintText,this.tec,this.lable}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -52,6 +53,7 @@ class ProfileEditTextaddress extends StatelessWidget {
       child:TextField(
         controller: tec,
         decoration: InputDecoration(
+          label: Text('${lable}'),
           hintText: hintText,
           border: InputBorder.none,
         ),

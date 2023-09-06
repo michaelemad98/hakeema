@@ -34,3 +34,13 @@ class TextWelcome extends StatelessWidget {
   }
 }
 
+class TitelText extends StatelessWidget {
+  final String txt;
+  const TitelText({super.key,required this.txt});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(txt,style: TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.w900),);
+  }
+}
+

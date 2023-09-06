@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hakeema/feature/controller/splashscreencontroler.dart';
+import 'package:hakeema/feature/view/widgits/Images/backgroundgreen.dart';
 
 import '../widgits/Textview/textview.dart';
 class SplashScreen extends StatelessWidget {
@@ -10,13 +11,9 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(
-          width: double.infinity,
-          height: double.infinity,
-        child: Image.asset('assets/images/background.png'),
-        ),
+        Image.asset("assets/images/background.png",height: double.infinity,),
         Scaffold(
-          backgroundColor: Colors.transparent,
+backgroundColor: Colors.transparent,
           body: SafeArea(
             child: GetBuilder<SplashController>(
               init: SplashController(),

@@ -68,6 +68,17 @@
   "resultnotfound": "Result Not Found ",
   "whoopsthisinformationisnotavailable": "Whoops ... this information is not available",
   "somethingwentwrong": "Something went wrong ",
-  "myreservation": "Reservation",
-  "changeLang": "Change Language"
+  "myreservation": "My Reservation",
+  "changeLang": "Change Language",
+  "draft": "Draft",
+  "newstatus": "New",
+  "inprocess": "In Process",
+  "rejected": "Rejected,",
+  "done": "Done",
+  "successfully": "Successfully",
+  "therequestwassubmittedsuccessfullyrequestnumber": "The request was submitted successfully. Request number",
+  "modifiedsuccessfully": "Modified successfully",
+  "editAccountinfo": "Edit Account Information",
+  "singout":"Sign Out",
+  "deleteaccount": "Delete Account From Database"
 }

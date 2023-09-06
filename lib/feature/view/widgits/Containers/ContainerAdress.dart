@@ -31,13 +31,16 @@ class ContainerAdress extends StatelessWidget {
         children: [
           ProfileEditTextaddress(hintText: AppLocalizations.of(context)!.building_num,
           tec: buildingtec,
+            lable:AppLocalizations.of(context)!.building_num ,
           ),
-          ProfileEditTextaddress(hintText: AppLocalizations.of(context)!.unit_no,tec: unittec),
+          ProfileEditTextaddress(hintText: AppLocalizations.of(context)!.unit_no,tec: unittec,
+          lable: AppLocalizations.of(context)!.unit_no,
+          ),
           Row(
             children: [
-              Flexible(child: ProfileEditTextaddress(hintText: AppLocalizations.of(context)!.zone_no,tec: zonetec),
+              Flexible(child: ProfileEditTextaddress(hintText: AppLocalizations.of(context)!.zone_no,tec: zonetec,lable: AppLocalizations.of(context)!.zone_no),
               ),
-              Flexible(child: ProfileEditTextaddress(hintText: AppLocalizations.of(context)!.street,tec: streettec),
+              Flexible(child: ProfileEditTextaddress(hintText: AppLocalizations.of(context)!.street,tec: streettec,lable: AppLocalizations.of(context)!.street),
               ),
             ],
           )

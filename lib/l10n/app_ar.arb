@@ -68,6 +68,18 @@
   "resultnotfound": "لم يتم العثور على النتيجة",
   "whoopsthisinformationisnotavailable": "عفوًا ... هذه المعلومات غير متوفرة",
   "somethingwentwrong": "هناك خطأ ما",
-  "myreservation": "الحجوزات",
-  "changeLang": "تغيير اللغة"
+  "myreservation": "حجوزاتي",
+  "changeLang": "تغيير اللغة",
+  "draft": "البيانات غير مكتملة",
+  "newstatus": "جديد",
+  "inprocess": "تحت الاجراء",
+  "rejected": "مرفوض",
+  "done": "منتهي",
+  "successfully": "تم بنجاح",
+  "therequestwassubmittedsuccessfullyrequestnumber": "تم تقديم الطلب بنجاح رقم الطلب : ",
+  "modifiedsuccessfully": "تم التعديل بنجاح",
+  "editAccountinfo": "تحرير معلومات الحساب",
+  "singout":" تسجيل الخروج",
+  "deleteaccount": "حذف الحساب من قاعدة البيانات"
+
 }

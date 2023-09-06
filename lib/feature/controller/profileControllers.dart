@@ -12,6 +12,13 @@ import '../repository/userrepository/user_repository.dart';
 class ProfileController extends GetxController{
   static ProfileController get instance => Get.find();
 
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    getCustomerInfo();
+    super.onInit();
+  }
+
   // final _authRepo = Get.put(RegisgterController());
   final _auth =FirebaseAuth.instance;
   Rx<User?>? firebaseUser;

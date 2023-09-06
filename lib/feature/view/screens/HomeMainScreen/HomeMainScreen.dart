@@ -9,16 +9,21 @@ import 'Settings/settengisScreen.dart';
 import 'appontmentScreen.dart';
 
 class HomeMainScreen extends StatelessWidget {
-  const HomeMainScreen({Key? key}) : super(key: key);
+  final int currentpage ;
+  const HomeMainScreen({Key? key,required this.currentpage}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GetBuilder<HomeController>(init: HomeController(),
       builder: (controller) {
         return CupertinoTabScaffold(tabBar: CupertinoTabBar(
+          currentIndex: currentpage,
+          iconSize: 45,
+          height: 80,
+
           items:  <BottomNavigationBarItem>
           [
-            BottomNavigationBarItem(icon: Icon(Icons.apps_sharp,),label: AppLocalizations.of(context)!.home),
+            BottomNavigationBarItem(icon: Icon(Icons.apps_sharp,),label: AppLocalizations.of(context)!.home,),
             BottomNavigationBarItem(icon: Icon(Icons.account_circle_sharp,),label: AppLocalizations.of(context)!.profile),
             BottomNavigationBarItem(icon: Icon(Icons.my_library_books_rounded,),label: AppLocalizations.of(context)!.myreservation),
           ],
